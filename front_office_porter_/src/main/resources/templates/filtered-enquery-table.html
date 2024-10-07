@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+     <div class="container w-75 mt-3" id="enqTbl">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Courses</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Enquiry Date</th>
+                    <th scope="col">class mode</th>
+                    <th scope="col">status</th>
+                           <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="enquery : ${userEnqueries}">
+                    <th scope="row">1</th>
+                    <td th:text="${enquery.getName()}"></td>
+                    <td th:text="${enquery.getCourse()}"></td>
+                    <td th:text="${enquery.getContactNumber()}"></td>
+                    <td th:text="${enquery.getDateCreate() }"></td>
+                    <td th:text="${enquery.getClassMode() }"></td>
+                    <td th:text="${enquery.getEnquiryStatu()}"></td>
+                    <td ><a class="btn btn-primary" href="enquiry">Edit</a></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+  </body>
+</html>
